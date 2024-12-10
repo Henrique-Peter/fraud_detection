@@ -105,25 +105,25 @@ Primeiramente eu treinei os seguintes modelos: Balanced RF, Light GBM, XGBoost e
 Passando por todo o projeto, podemos resumir os resultados em 4 principais pontos, comparando o modelo baseline com o novo modelo treinado:
 
 1. Métricas financeiras (considerando dados de teste)
-- Threshold: passou de 73 para 64
-- Ganhos: passou de USD 80330 para USD 88201
-- Perdas: passou de USD 25353 para USD 22471
-- Lucro: passou de USD 54977 para USD 65730
+- Threshold: passou de 73 para 57
+- Ganhos: passou de USD 80330 para USD 86128
+- Perdas: passou de USD 25353 para USD 18070
+- Lucro: passou de USD 54977 para USD 68058
 
 2. Matriz de confusão e taxas de fraude e aprovação (considerando dados de teste)
-- Falsos negativos: passou de 503 para 479 (diminuir esse quadrante da matriz é especialmente importante, pois é aquele que causa prejuízo dobrado para a instituição, perdendo a comissão de 10% e ainda tendo que pagar 100% do valor para o cliente)
-- Taxa de fraude permaneceu a mesma (2%), enquanto a de aprovação passou de 74% para 82%
+- Falsos negativos: passou de 503 para 383 (diminuir esse quadrante da matriz é especialmente importante, pois é aquele que causa prejuízo dobrado para a instituição, perdendo a comissão de 10% e ainda tendo que pagar 100% do valor para o cliente)
+- Taxa de fraude permaneceu a mesma (2%), enquanto a de aprovação passou de 74% para 77%
 
 3. Métricas de desempenho
-- Log Loss: passou de 8.6 para 5.8 (diminuir essa métrica indica que o modelo está fazendo previsões melhores)
-- Precisão: passou de 0.13 para 0.19 (indica que o novo modelo conseguiu classificar mais fraudes que realmente eram fraudes)
-- Recall: passou de 0.67 para 0.69 (indica que o novo modelo conseguiu identificar melhor as fraudes que realmente eram fraudes)
-- F1-score: passou de 0.22 para 0.30 (como o F1-score é a média harmônica da precisão e do recall, tendo aumentado ambos, essa métrica também cresceu)
+- Log Loss: passou de 8.6 para 7.3 (diminuir essa métrica indica que o modelo está fazendo previsões melhores)
+- Precisão: passou de 0.13 para 0.17 (indica que o novo modelo conseguiu classificar mais fraudes que realmente eram fraudes)
+- Recall: passou de 0.67 para 0.75 (indica que o novo modelo conseguiu identificar melhor as fraudes que realmente eram fraudes)
+- F1-score: passou de 0.22 para 0.27 (como o F1-score é a média harmônica da precisão e do recall, tendo aumentado ambos, essa métrica também cresceu)
 - ROC-AUC: passou de 0.73 para 0.85 (o novo modelo está conseguindo generalizar melhor, entendendo as diferenças entre fraudes e não fraudes)
 
 4. O que realmente importa no fim do dia... qual o lucro a mais que foi gerado?
-- Como calculado acima, considerando as médias de compras por mês, e a média dos valores das compras, o modelo inicial, por ter uma razão de lucro de 68%, conseguiria um lucro mensal de aproximadamente USD 221968. Enquanto o modelo novo, com uma razão de lucro de 78%, conseguiria um lucro mensal de aproximadamente USD 254610
-- Por mês, isso representa uma diferença de USD 32642, e por ano de USD 391704 a mais que a instituição irá ganhar de lucro. Isso representa um aumento de lucros anuais em 15%.
+- Como calculado acima, considerando as médias de compras por mês, e a média dos valores das compras, o modelo inicial, por ter uma razão de lucro de 68%, conseguiria um lucro mensal de aproximadamente USD 221968. Enquanto o modelo novo, com uma razão de lucro de 79%, conseguiria um lucro mensal de aproximadamente USD 257874
+- Por mês, isso representa uma diferença de USD 35906, e por ano de USD 430872 a mais que a instituição irá ganhar de lucro. Isso representa um aumento de lucros anuais em 16%.
 
 Ou seja, o novo modelo treinado não só melhora a capacidade de detecção de compras fraudulentas, como também aumenta consideravelmente os lucros da empresa.
 
